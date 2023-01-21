@@ -31,5 +31,29 @@ jobs:
         with:
           name: cypress_result_txt
           path: result.txt
-
-      
+  Add_badge_job:
+    runs-on: ubuntu-latest
+    needs: Cypress_job
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Download Cypress Result
+        uses: actions/download-artifact@v3
+        with:
+          name: cypress_result_txt
+      - name: Get Cypress Result
+        run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
+        id: cypress_status
+      - name: Mod Readme
+        uses: ././github/actions/mod_readme
+        with:
+          resultado: ${{ steps.cypress_status.outputs.cypress_outcome }}
+      - name: Update Readme
+        uses: EndBud/add-and-commit@v9
+        with:
+          add: "."
+          author_name: "Joaquim Ribera Soriano"
+          author_email: "joaquimdaweb@gmail.com"
+          message: "Readme Updated"
+          push: true
+        

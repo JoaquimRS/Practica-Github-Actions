@@ -1,0 +1,9 @@
+name: Custom Action Modify Readme
+description: "Action para coger el resultado de los tests de cypress y modificar el readme"
+inputs:
+  resultado:
+    description: "Output del step anterior"
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.js"

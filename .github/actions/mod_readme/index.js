@@ -14,9 +14,10 @@ fs.readFile("./README.md", 'utf-8', (err, data) => {
     let start = data.indexOf("<inicio>")
     let end = data.indexOf("<fin>")
     let newText = `
-    <inicio>
-    RESULTADO DE LOS ÚLTIMOS TESTS: 
-    <img src="${badge}">`
+<inicio>
+RESULTADO DE LOS ÚLTIMOS TESTS: 
+<img src="${badge}">
+`
     console.log(newText);
     let newData = data.substring(0, start) + newText + data.substring(end);
     fs.writeFile("./README.md", newData, 'utf8', (err) => {
@@ -24,5 +25,3 @@ fs.readFile("./README.md", 'utf-8', (err, data) => {
         console.log("El README ha sido modificado");
     })
 })
-
-

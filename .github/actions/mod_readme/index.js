@@ -13,7 +13,9 @@ fs.readFile("./README.md", 'utf-8', (err, data) => {
     if (err) throw err;
     let start = data.indexOf("<inicio>")
     let end = data.indexOf("<fin>")
-    let newText = `RESULTADO DE LOS ÚLTIMOS TESTS: 
+    let newText = `
+    <inicio>
+    RESULTADO DE LOS ÚLTIMOS TESTS: 
     <img src="${badge}">`
     console.log(newText);
     let newData = data.substring(0, start) + newText + data.substring(end);

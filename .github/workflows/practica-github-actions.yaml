@@ -25,7 +25,7 @@ jobs:
         continue-on-error: true
         id: cypress_result
       - name: Create Cypress Artifact
-        run: echo ${{ steps.cypress_result.outcome }} > result.txt && echo ${{ steps.cypress_result.outcome }}
+        run: echo ${{ steps.cypress_result.outcome }}
       - name: Upload Cypress Result
         uses: actions/upload-artifact@v3
         with:

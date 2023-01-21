@@ -49,7 +49,7 @@ jobs:
         with:
           resultado: ${{ steps.cypress_status.outputs.cypress_outcome }}
       - name: Update Readme
-        uses: EndBud/add-and-commit@v9
+        uses: EndBug/add-and-commit@v9
         with:
           add: "."
           author_name: "Joaquim Ribera Soriano"

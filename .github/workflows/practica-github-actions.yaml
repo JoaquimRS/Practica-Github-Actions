@@ -45,7 +45,7 @@ jobs:
         run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
         id: cypress_status
       - name: Mod Readme
-        uses: ././github/actions/mod_readme
+        uses: ./.github/actions/mod_readme
         with:
           resultado: ${{ steps.cypress_status.outputs.cypress_outcome }}
       - name: Update Readme

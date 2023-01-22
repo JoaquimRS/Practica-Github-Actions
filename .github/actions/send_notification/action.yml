@@ -1,0 +1,24 @@
+name: Custom Action Send Email
+description: "Action para enviar un mensaje con todos los resultados de los jobs"
+inputs:
+  res_linter_job:
+    description: "Resultado del Linter"
+    required: true
+  res_cypress_job:
+    description: "Resultado del Cypress"
+    required: true
+  res_add_badge_job:
+    description: "Resultado del Badge"
+    required: true
+  res_deploy_job:
+    description: "Resultado del Deploy"
+    required: true
+  personal_email:
+    description: "Correo personal"
+    required: true
+  api_key:
+    description: "Token de la api"
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.js"

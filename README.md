@@ -19,7 +19,7 @@ Una manera común es mediante la creación de archivos de configuración de acci
 Estos archivos, que normalmente se guardan en el directorio .github/workflows/ del repositorio, contienen definiciones de flujos de trabajo que especifican qué acciones deben ejecutarse y en qué eventos.
 
 ### ACTIVIDAD
-Clonaremos el repositorio (https://github.com/dawEstacio/nextjs-blog-practica) y crearemos esta configuración inicial:
+Clonaremos el repositorio (https://github.com/dawEstacio/nextjs-blog-practica) y crearemos esta configuración inicial: 
 ```
 |-- cypress/
 |   |-- fixtures/

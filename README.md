@@ -235,8 +235,11 @@ let badge = resultado_cypress == "success" ? success : failure
 
 fs.readFile("./README.md", 'utf-8', (err, data) => {
     if (err) throw err;
-    let start = data.indexOf("<inicio>")
-    let end = data.indexOf("<fin>")
+    let start = data.indexOf("
+<inicio>
+RESULTADO DE LOS ÚLTIMOS TESTS: 
+<img src="https://img.shields.io/badge/tested with-Cypress-04C38E.svg">
+<fin>")
     let newText = `
 <inicio>
 RESULTADO DE LOS ÚLTIMOS TESTS: 

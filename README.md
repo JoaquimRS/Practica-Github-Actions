@@ -732,7 +732,7 @@ jobs:
           base: ""
           plugin_isocalendar: yes
 ```
-Luego en el **README.md**, pondremos lo siguiente al final del archivo:
+Luego en el **README.md**, pondremos lo siguiente al final del archivo: 
 ```
 ...
 ![Metrics](/github-metrics.svg)

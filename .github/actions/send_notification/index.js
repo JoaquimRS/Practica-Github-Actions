@@ -15,6 +15,7 @@ const msg = {
   subject: 'Resultado del workflow ejecutado',
   text: 'Se ha realizado un push en la rama main que ha provocado la ejecución del workflow practica-github-actions con los siguientes resultados:',
   html: `
+  <strong>Se ha realizado un push en la rama main que ha provocado la ejecución del workflow practica-github-actions con los siguientes resultados:</strong>
   <table>
     <tr>
         <th>Job</th>

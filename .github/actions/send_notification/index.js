@@ -41,6 +41,4 @@ const msg = {
   </table>
   `,
 };
-console.log(msg);
-console.log(res_linter_job,res_cypress_job,res_add_badge_job,res_deploy_job);
 sgMail.send(msg)

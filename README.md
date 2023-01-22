@@ -62,8 +62,8 @@ git push origin main
 
 Una vez hagamos el push y se ejecute la action, veremos que en el registro de las actions hay un error en la sintaxis del codigo.
 
-img=Linter_job_001.png
-img=Linter_job_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Linter_job_001.png">
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Linter_job_002.png">
 
 Ahora lo que haremos sera corregir la sintaxis de esos archivos
 * ./pages/api/users/[id].js
@@ -103,7 +103,7 @@ Lo modificamos por:
 ```
 
 Y ahora ya funcionara el linter
-img=Linter_job_003.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Linter_job_003.png">
 
 ##### 2. CYPRESS_JOB
 > Se encargará de ejecutar los tests de cypress (link) que contiene el proyecto. Para ello, utilizaréis la action oficial del proyecto (link). Si lo deseáis, podéis ejecutar manualmente mediante el comando npm run cypress (siempre que esté arrancado el proyecto previamente). Este Job, que se ejecutará después del Linter_job, estará compuesto por los siguientes steps:
@@ -149,7 +149,7 @@ jobs:
           path: result.txt
 ```
 Una vez hagamos el push y se ejecute la action, veremos que en el registro de las actions los tests de cypress han fallado.
-img=Cypress_job_001.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Cypress_job_001.png">
 
 Si investigamos un poco nos daremos cuenta de que hay un fallo en el codigo, en el archivo **./pages/api/users/index.js**, para corregirlo modificaremos lo siguiente:
 ```js
@@ -161,7 +161,7 @@ Lo modificaremos por:
 ```
 
 Y ahora los test de cypress no habran fallado:
-img=Cypress_job_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Cypress_job_002.png">
 
 ##### 3. ADD_BADGE_JOB
 > Se encargará de publicar en el readme del proyecto el badge que indicará si se han superado los tests de cypress o no. 
@@ -323,14 +323,14 @@ jobs:
           push: true        
 ```
 Puede ser que no nos deje modificar el **README.md** porque alomejor el bot no tiene permisos de escritura, entonces modificando la configuración de nuestro **github** yendo a **Setting→Actions→General** seleccionamos esta opción:
-img=Add_badge_job_001.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Add_badge_job_001.png">
 
 
 Y ahora si realizamos el push y los tests de cypress son correctos tendremos este resultado en nuestro **README.md**:
-img=Add_badge_job_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Add_badge_job_002.png">
 
 Si hacemos que los tests de cypress fallen tendremos este resultado en nuestro **README.md**:
-img=Add_badge_job_003.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Add_badge_job_003.png">
 
 
 
@@ -344,26 +344,26 @@ Para poder desplegar nuestra aplicación con Vercel, lo primero que tendremos qu
 >https://vercel.com/account/tokens
 
 Generaremos un token de la siguiente manera:
-img=Deploy_job_001.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_001.png">
 
 Una vez tengamos nuestro token, crearemos un nuevo proyecto:
-img=Deploy_job_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_002.png">
 
 Importaremos nuestro repositorio de github:
-img=Deploy_job_003.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_003.png">
 
 Y finalmente le daremos al boton de desplegar para iniciar nuestro proyecto:
-img=Deploy_job_004.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_004.png">
 
 Y ya tendriamos nuestro token, ahora para poder utilizar la action de **amond-net/vercel-action@v20** tendremos que guardar 3 secrets en nuestro repositorio de github:
 **1. VERCEL_TOKEN** será el token que acabamos de generar en *vercel.com*
 **2. VERCEL_ORG_ID** se encuentra en **vercel.com/account -> settings -> general (al final)**
-img=Deploy_job_005.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_005.png">
 **3. VERCEL_PROJECT_ID** se encuentra en **vercel.com/dashboard -> practica-github-actions -> settings -> general (al final)**
-img=Deploy_job_006.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_006.png">
 
 Y el resultado final de nuestros secrets seria algo así:
-img=Deploy_job_007.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_007.png">
 
 Una vez tengamos configurados los secrets para poder ejecutar esta action en el fichero **./github/workflows/practica-github-actions.yaml** pondremos la siguiente configuración:
 ```yaml
@@ -458,10 +458,10 @@ Si todo ha ido bien, ya tendriamos nuestra aplicación desplegada con vercel:
 Para este job utilizaremos SendGrid para enviar los mensajes.
 Para realizar este job lo primero que haremos sera inicar sesión en SendGrid (https://app.sendgrid.com/login/)
 Una vez inicado sesión lo que haremos sera crear una API_KEY que pondremos en nuestros secrets de github, para ello iremos a https://app.sendgrid.com/settings/api_keys y generaremos una nueva key.
-img=Notification_job_001.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_001.png">
 
 Luego nos hiremos a https://app.sendgrid.com/settings/sender_auth/senders y crearemos un enviador en este caso utilizare mi correo electronico de *joaquimdaweb@gmail.com* como remitente y lo validaremos.
-img=Notification_job_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_002.png">
 
 Ahora lo que haremos sera crear la siguiente estructura en nuestro proyecto:
 ```
@@ -683,19 +683,19 @@ Una vez tengamos el yaml configurado tendremos que añadir los secrets que nos f
 **1. PERSONAL_EMAIL** en mi caso *joaquimdaweb@gmail.com*
 **2. APIKEY_SEND_GRID** la key que hemos generado al principio
 Resultado final de los secrets:
-img=Notification_job_003.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_003.png">
 
 Ahora si hacemos el push y todo funciona correctamente recibiremos un correo como el siguiente:
-img=Notification_job_004.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_004.png">
 
 ##### 6. README_PERSONAL
 > Configurad en vuestro readme personal (el del repositorio que tiene como nombre vuestro usuario de github) una action que permita mostrar métricas de los lenguajes más utilizados en los proyectos de vuestro perfil de github. Disponéis de la siguiente action (link). En este otro enlace (link) tenéis descritos los pasos que necesitáis realizar para poder configurar y usar la action correctamente. Tenéis total libertad de añadir el panel informativo de métricas que más os guste de entre todos los disponibles (link).
 
 Lo primero que haremos sera generar un **token** y guardarlo en los **secrets** de nuestro repositorio, en mi caso **JoaquimRS**:
 * **Token** (https://github.com/settings/tokens):
-img=Readme_personal_001.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Readme_personal_001.png">
 * **Secret** (https://github.com/JoaquimRS/JoaquimRS/settings/secrets/actions):
-img=Readme_personal_002.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Readme_personal_002.png">
 
 Una vez creado y configurado nuestro token de github lo siguiente que haremos sera crear la estructura de carptas siguiente:
 ```
@@ -732,7 +732,7 @@ Luego en el **README.md**, pondremos lo siguiente al final del archivo:
 ```
 
 Publicaremos los cambios y si todo funciona correctamente tendremos el siguiente resultado:
-img=Readme_personal_003.png
+<img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Readme_personal_003.png">
 
 
 

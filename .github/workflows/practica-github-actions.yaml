@@ -68,5 +68,5 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: joaquimrs
-          vercel-project-id: practica-github-actions
+          vercel-project-id: practica-github-actions-01
           working-directory: ./

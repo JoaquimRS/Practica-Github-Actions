@@ -253,6 +253,7 @@ fs.readFile("./README.md", 'utf-8', (err, data) => {
     if (err) throw err;
     let start = data.indexOf("
 
+
 <inicio>
 RESULTADO DE LOS ÚLTIMOS TESTS: 
 <img src="https://img.shields.io/badge/tested with-Cypress-04C38E.svg">

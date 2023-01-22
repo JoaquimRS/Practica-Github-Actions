@@ -3,7 +3,23 @@
 
 ### INTRODUCCIÓN TEÓRICA
 
+###### HISTORIA
+GitHub Actions fue anunciado en octubre de 2018 durante la conferencia GitHub Universe. 
+La característica se lanzó en beta público en mayo de 2019, y se lanzó oficialmente en noviembre de ese año. Desde entonces, ha sido ampliamente adoptado por desarrolladores y equipos de todo el mundo para automatizar sus procesos de desarrollo de software. 
+Con el tiempo, GitHub ha añadido nuevas funciones y mejoras a las acciones, como la posibilidad de ejecutar acciones en múltiples sistemas operativos y entornos de contenedores, y la integración con herramientas de terceros a través de la plataforma GitHub Marketplace.
+
+###### QUE SON?
+GitHub Actions es una característica de GitHub que permite automatizar el proceso de desarrollo de software. 
+Con las acciones de GitHub, puedes crear flujos de trabajo personalizados para ejecutar tareas automatizadas en respuesta a eventos específicos en tu repositorio, como actualizaciones de código o creación de problemas. 
+Estas acciones pueden incluir tareas como compilación de código, pruebas automatizadas, despliegue y más. 
+Al utilizar acciones de GitHub en tu proyecto, puedes asegurarte de que tu código es de alta calidad y está listo para ser implementado en producción.
+
+###### COMO SE UTILIZAN?
+Una manera común es mediante la creación de archivos de configuración de acciones en tu repositorio. 
+Estos archivos, que normalmente se guardan en el directorio .github/workflows/ del repositorio, contienen definiciones de flujos de trabajo que especifican qué acciones deben ejecutarse y en qué eventos.
+
 ### ACTIVIDAD
+Clonaremos el repositorio (https://github.com/dawEstacio/nextjs-blog-practica) y crearemos esta configuración inicial:
 ```
 |-- cypress/
 |   |-- fixtures/

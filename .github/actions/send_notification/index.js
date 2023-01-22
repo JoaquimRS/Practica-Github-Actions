@@ -10,7 +10,7 @@ const api_key = core.getInput("api_key")
 
 sgMail.setApiKey(api_key);
 const msg = {
-  to: 'joaquimdaweb@gmail.com',
+  to: personal_email,
   from: 'joaquimrs@practica-github-actions.com', // Use the email address or domain you verified above
   subject: 'Resultado del workflow ejecutado',
   text: 'Se ha realizado un push en la rama main que ha provocado la ejecución del workflow practica-github-actions con los siguientes resultados:',
@@ -42,3 +42,4 @@ const msg = {
 };
 console.log(msg);
 console.log(res_linter_job,res_cypress_job,res_add_badge_job,res_deploy_job);
+sgMail.send(msg)

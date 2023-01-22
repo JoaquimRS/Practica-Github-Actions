@@ -251,14 +251,8 @@ let badge = resultado_cypress == "success" ? success : failure
 
 fs.readFile("./README.md", 'utf-8', (err, data) => {
     if (err) throw err;
-    let start = data.indexOf("
-
-
-
-<inicio>
-RESULTADO DE LOS ÚLTIMOS TESTS: 
-<img src="https://img.shields.io/badge/tested with-Cypress-04C38E.svg">
-<fin>")
+    let start = data.indexOf("< inicio >")
+    let end = data.indexOf("< fin >")
     let newText = `
 <inicio>
 RESULTADO DE LOS ÚLTIMOS TESTS: 
@@ -704,6 +698,8 @@ jobs:
           api_key: ${{ secrets.APIKEY_SEND_GRID}}
 ```
 Una vez tengamos el yaml configurado tendremos que añadir los secrets que nos faltan:
+
+
 **1. PERSONAL_EMAIL** en mi caso *joaquimdaweb@gmail.com*
 
 **2. APIKEY_SEND_GRID** la key que hemos generado al principio
@@ -720,6 +716,7 @@ Ahora si hacemos el push y todo funciona correctamente recibiremos un correo com
 Lo primero que haremos sera generar un **token** y guardarlo en los **secrets** de nuestro repositorio, en mi caso **JoaquimRS**:
 * **Token** (https://github.com/settings/tokens):
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Readme_personal_001.png">
+
 * **Secret** (https://github.com/JoaquimRS/JoaquimRS/settings/secrets/actions):
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Readme_personal_002.png">
 

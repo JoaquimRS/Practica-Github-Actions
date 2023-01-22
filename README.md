@@ -359,7 +359,9 @@ Y finalmente le daremos al boton de desplegar para iniciar nuestro proyecto:
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_004.png">
 
 Y ya tendriamos nuestro token, ahora para poder utilizar la action de **amond-net/vercel-action@v20** tendremos que guardar 3 secrets en nuestro repositorio de github:
+
 **1. VERCEL_TOKEN** será el token que acabamos de generar en *vercel.com*
+
 **2. VERCEL_ORG_ID** se encuentra en **vercel.com/account -> settings -> general (al final)**
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Deploy_job_005.png">
 **3. VERCEL_PROJECT_ID** se encuentra en **vercel.com/dashboard -> practica-github-actions -> settings -> general (al final)**
@@ -463,7 +465,7 @@ Para realizar este job lo primero que haremos sera inicar sesión en SendGrid (h
 Una vez inicado sesión lo que haremos sera crear una API_KEY que pondremos en nuestros secrets de github, para ello iremos a https://app.sendgrid.com/settings/api_keys y generaremos una nueva key.
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_001.png">
 
-Luego nos hiremos a https://app.sendgrid.com/settings/sender_auth/senders y crearemos un enviador en este caso utilizare mi correo electronico de *joaquimdaweb@gmail.com* como remitente y lo validaremos.
+Luego nos iremos a https://app.sendgrid.com/settings/sender_auth/senders y crearemos un enviador en este caso utilizare mi correo electronico de *joaquimdaweb@gmail.com* como remitente y lo validaremos.
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_002.png">
 
 Ahora lo que haremos sera crear la siguiente estructura en nuestro proyecto:
@@ -684,7 +686,9 @@ jobs:
 ```
 Una vez tengamos el yaml configurado tendremos que añadir los secrets que nos faltan:
 **1. PERSONAL_EMAIL** en mi caso *joaquimdaweb@gmail.com*
+
 **2. APIKEY_SEND_GRID** la key que hemos generado al principio
+
 Resultado final de los secrets:
 <img src="https://raw.githubusercontent.com/JoaquimRS/Practica-Github-Actions/main/readme_assets/Notification_job_003.png">
 
